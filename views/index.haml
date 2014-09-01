@@ -1,0 +1,64 @@
+!!!
+%haml{:lang => 'ja'}
+  %head
+    %title AMAOTO_LIVE
+    %meta{:charset => 'UTF-8'}
+    %link{:rel => :stylesheet, :type => :'text/css', :href => 'main.css'}
+    %link{:rel => :stylesheet, :type => :'text/css', :href => 'http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Press+Start+2P'}
+    %script{:type => 'text/javascript', :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'}
+    %script{:type => 'text/javascript', :src => 'jquery.transit.min.js'}
+    %script{:type => 'text/javascript', :src => 'jquery.shuffleLetters.js'}
+    %script{:type => 'text/javascript', :src => 'index.js'}
+  %body
+    %div{:class => 'title'} AMAOTO_LIVE
+    %div{:id => 'japan'}
+      %div{:class => 'parallelogram'}
+        %div{:id => 'hokkaido'}
+        %div{:id => 'nagasaki'}
+        %div{:id => 'kyushu'}
+          %div{:id => 'akuseki'}
+            %div{:id => 'sensor'}
+              %a{href: 'nakano-jima'}
+                %div{:id => 'playbutton'}
+                  %div{class: 'triangle'}
+                    %div{class: 'triangle-1'}
+                    %div{class: 'triangle-2'}
+                    %div{class: 'triangle-3'}
+          %div{id:'line'}
+          %div{id:'info'}
+            %span{class:'info-name'} NAKANO_JIMA
+            %p{:class => 'temperature'} temperature: #{@nakano[:data].find{|v|v[:name]=='Temperature'}[:value]}
+            %p{:class => 'rainfall'} rainfall: #{@nakano[:data].find{|v|v[:name]=='RainFall'}[:value]}
+            %p{:class => 'windspeed'} windspeed: #{@nakano[:data].find{|v|v[:name]=='WindSpeed'}[:value]}
+        %div{:id => 'east'}
+        %div{:id => 'west'}
+          %div{:id => 'chiba'}
+            %div{:id => 'sensor'}
+              %a{href: 'kashiwanoha-high-school'}
+                %div{:id => 'playbutton'}
+                  %div{:class => 'triangle'}
+                    %div{:class => 'triangle-1'}
+                    %div{:class => 'triangle-2'}
+                    %div{:class => 'triangle-3'}
+          %div{:id => 'line'}
+          %div{:id => 'info'}
+            %span{:class => 'info-name'} KASHIWANOHA_HIGH_SCHOOL
+            %p{:class => 'temperature'} temperature: #{@kashiwanoha[:data].find{|v|v[:name]=='Temperature'}[:value]}
+            %p{:class => 'rainfall'} rainfall: #{@kashiwanoha[:data].find{|v|v[:name]=='RainFall'}[:value]}
+            %p{:class => 'windspeed'} windspeed: #{@kashiwanoha[:data].find{|v|v[:name]=='WindSpeed'}[:value]}
+        %div{:id => 'shikoku'}
+        %div{id: 'tohoku'}
+          %div{:id => 'nayoro'}
+            %div{:id => 'sensor'}
+              %a{href: 'otsuchi-u-tokyo'}
+                %div{:id => 'playbutton'}
+                  %div{class: 'triangle'}
+                    %div{class: 'triangle-1'}
+                    %div{class: 'triangle-2'}
+                    %div{class: 'triangle-3'}
+          %div{id:'line'}
+          %div{id:'info'}
+            %span{class:'info-name'} The Atmosphere and Ocean Research Institute
+            %p{:class => 'temperature'} temperature: #{@aori[:data].find{|v|v[:name]=='Temperature'}[:value]}
+            %p{:class => 'rainfall'} rainfall: #{@aori[:data].find{|v|v[:name]=='RainFall'}[:value]}
+            %p{:class => 'windspeed'} windspeed: #{@aori[:data].find{|v|v[:name]=='WindSpeed'}[:value]}

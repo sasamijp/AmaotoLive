@@ -1,0 +1,96 @@
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="index.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Press+Start+2P' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="jquery.transit.min.js"></script>
+<script type="text/javascript" src="jquery.shuffleLetters.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</head>
+
+<span class="title">
+    AMAOTO_LIVE
+  </span>
+
+<div id="japan">
+  <div class="parallelogram">
+    <div id="hokkaido">
+
+      <div id="nayori">
+        <div class="sensor-hokkaido">
+          <a href="hokkaido">
+            <div id="playbutton">
+              <div class="triangle">
+                <div class="triangle-1"></div>
+                <div class="triangle-2"></div>
+                <div class="triangle-3"></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div id="line3-to-info"></div>
+      <div id="info-hokkaido">
+        <span class="info-name-hokkaido">NISSHIN_NAYORO_HOKKAIDO</span>
+        <p class="temperature-hokkaido">temperature: <%= @hiroshima[:data].find{|v|v[:name]=='Temperature'}[:value] %></p>
+        <p class="rainfall-hokkaido">rainfall: <%= @hiroshima[:data].find{|v|v[:name]=='RainFall'}[:value] %></p>
+        <p class="windspeed-hokkaido">windspeed: <%= @hiroshima[:data].find{|v|v[:name]=='WindSpeed'}[:value] %></p>
+      </div>
+
+
+    </div>
+    <div id="nagasaki"></div>
+    <div id="kyushu"></div>
+    <div id="east">
+      <div id="hiroshima">
+        <div class="sensor-hiroshima">
+          <a href="hiroshima-city-univercity">
+            <div id="playbutton">
+                <div class="triangle">
+                    <div class="triangle-1"></div>
+                    <div class="triangle-2"></div>
+                    <div class="triangle-3"></div>
+                </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="line2-to-info"></div>
+      <div id="info-hiroshima">
+        <span class="info-name-hiroshima">HIROSHIMA_CITY_UNIVERSITY</span>
+        <p class="temperature-hiroshima">temperature: <%= @hiroshima[:data].find{|v|v[:name]=='Temperature'}[:value] %></p>
+        <p class="rainfall-hiroshima">rainfall: <%= @hiroshima[:data].find{|v|v[:name]=='RainFall'}[:value] %></p>
+        <p class="windspeed-hiroshima">windspeed: <%= @hiroshima[:data].find{|v|v[:name]=='WindSpeed'}[:value] %></p>
+      </div>
+    </div>
+
+    <div id="west">
+      <div id="chiba">
+        <div class="sensor-chiba">
+          <a href="kashiwanoha-high-school">
+            <div id="playbutton">
+              <div class="triangle">
+                <div class="triangle-1"></div>
+                <div class="triangle-2"></div>
+                <div class="triangle-3"></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="line-to-info"></div>
+      <div id="info-chiba">
+        <span class="info-name-chiba">KASHIWANOHA_HIGH_SCHOOL</span>
+        <p class="temperature-chiba">temperature: <%= @kashiwanoha[:data].find{|v|v[:name]=='Temperature'}[:value] %></p>
+        <p class="rainfall-chiba">rainfall: <%= @kashiwanoha[:data].find{|v|v[:name]=='RainFall'}[:value] %></p>
+        <p class="windspeed-chiba">windspeed: <%= @kashiwanoha[:data].find{|v|v[:name]=='WindSpeed'}[:value] %></p>
+      </div>
+    </div>
+    <div id="shikoku">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,432 @@
+//@import 'compass';
+
+//@import "compass/reset";
+
+body
+{
+  color: #FFF;
+  font-size:60px;
+  background-color: rgb(0, 151, 178);
+  font-family: 'Source Code Pro';
+  text-align: center;
+  min-width: 700px;
+}
+
+.title
+{
+  position: relative;
+  top: 20px;
+}
+
+#japan
+{
+  position: relative;
+  top:20px;
+  width: 500px;
+  height: 500px;
+  margin-left:auto;
+  margin-right:auto;
+  .triangle
+  {
+    -moz-transform:skewX(12deg);
+    -webkit-transform:skewX(12deg);
+    transform:skewX(12deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    position: absolute;
+    left: 1px;
+  }
+
+  .triangle-1
+  {
+    background-color: rgb(0, 151, 178);
+    position: relative;
+    top: 5px;
+    left: -5px;
+    width: 10px;
+    height: 1px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+  }
+
+  .triangle-2
+  {
+    background-color: rgb(0, 151, 178);
+    position: relative;
+    top: 2px;
+    left: -1px;
+    width: 7px;
+    height: 1px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+  }
+
+  .triangle-3
+  {
+    background-color: rgb(0, 151, 178);
+    position: relative;
+    top: 5px;
+    left: -1px;
+    width: 7px;
+    height: 1px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+  }
+  #tohoku{
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 150px;
+    left: 340px;
+    width: 70px;
+    height:70px;
+    #sensor{
+      position: absolute;
+      background-color: rgb(0, 151, 178);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      width: 15px;
+      height: 15px;
+      top: 24px;
+      left: 50px;
+      #playbutton
+      {
+        position: absolute;
+        background-color: #FFF;
+        top: 1px;
+        left: 1px;
+        width: 13px;
+        height: 13px;
+      }
+    }
+    #line
+    {
+      position: absolute;
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      background-color: #FFF;
+      width: 150px;
+      height: 0.5px;
+      top: 20px;
+      left: 60px;
+      opacity: 0;
+    }
+    #info{
+      position: absolute;
+      -moz-transform:skewX(12deg);
+      -webkit-transform:skewX(12deg);
+      transform:skewX(12deg);
+      width: 350px;
+      height: 20px;
+      top: 0px;
+      left: 100px;
+      color: rgb(0, 151, 178);
+      font-size: 16px;
+      opacity: 0;
+      .info-name
+      {
+        background-color: #FFF;
+        font-size: 20px;
+      }
+      .rainfall
+      {
+        position: absolute;
+        top:30px;
+        left: 70px;
+        background-color: #FFF;
+      }
+      .temperature
+      {
+        position: absolute;
+        top:50px;
+        left: 70px;
+        background-color: #FFF;
+      }
+
+      .windspeed
+      {
+        position: absolute;
+        top:70px;
+        left: 70px;
+        background-color: #FFF;
+      }
+
+    }
+
+  }
+  #hokkaido
+  {
+    background-color: #FFF;
+    position: absolute;
+    top: 50px;
+    left: 340px;
+    width: 100px;
+    height:70px;
+    box-shadow: rgb(0, 136, 160) 1px 1px, rgb(0, 136, 160) 2px 2px, rgb(0, 136, 160) 3px 3px, rgb(0, 136, 160) 4px 4px, rgb(0, 136, 160) 5px 5px, rgb(0, 136, 160) 6px 6px, rgb(0, 136, 160) 7px 7px, rgb(0, 136, 160) 8px 8px, rgb(0, 136, 160) 9px 9px, rgb(0, 136, 160) 10px 10px, rgb(0, 136, 160) 11px 11px, rgb(0, 136, 160) 12px 12px, rgb(0, 136, 160) 13px 13px, rgb(0, 136, 160) 14px 14px, rgb(0, 136, 160) 15px 15px, rgb(0, 136, 160) 16px 16px, rgb(0, 136, 160) 17px 17px, rgb(0, 136, 160) 18px 18px, rgb(0, 136, 160) 19px 19px, rgb(0, 136, 160) 20px 20px, rgb(0, 136, 160) 21px 21px, rgb(0, 136, 160) 22px 22px, rgb(0, 136, 160) 23px 23px, rgb(0, 136, 160) 24px 24px, rgb(0, 136, 160) 25px 25px, rgb(0, 136, 161) 26px 26px, rgb(0, 137, 161) 27px 27px, rgb(0, 137, 162) 28px 28px, rgb(0, 138, 162) 29px 29px, rgb(0, 138, 163) 30px 30px, rgb(0, 138, 163) 31px 31px, rgb(0, 139, 164) 32px 32px, rgb(0, 139, 164) 33px 33px, rgb(0, 140, 165) 34px 34px, rgb(0, 140, 165) 35px 35px, rgb(0, 141, 166) 36px 36px, rgb(0, 141, 166) 37px 37px, rgb(0, 141, 167) 38px 38px, rgb(0, 142, 167) 39px 39px, rgb(0, 142, 168) 40px 40px, rgb(0, 143, 168) 41px 41px, rgb(0, 143, 169) 42px 42px, rgb(0, 143, 169) 43px 43px, rgb(0, 144, 170) 44px 44px, rgb(0, 144, 170) 45px 45px, rgb(0, 145, 171) 46px 46px, rgb(0, 145, 171) 47px 47px, rgb(0, 146, 172) 48px 48px, rgb(0, 146, 172) 49px 49px, rgb(0, 146, 173) 50px 50px, rgb(0, 147, 173) 51px 51px, rgb(0, 147, 174) 52px 52px, rgb(0, 148, 174) 53px 53px, rgb(0, 148, 175) 54px 54px, rgb(0, 148, 175) 55px 55px, rgb(0, 149, 176) 56px 56px, rgb(0, 149, 176) 57px 57px, rgb(0, 150, 177) 58px 58px, rgb(0, 150, 177) 59px 59px, rgb(0, 151, 178) 60px 60px;
+
+  }
+  #nagasaki
+  {
+    background-color: #FFF;
+    position: absolute;
+    top: 240px;
+    left: 110px;
+    width: 70px;
+    height:40px;
+    box-shadow: rgb(0, 136, 160) 1px 1px, rgb(0, 136, 160) 2px 2px, rgb(0, 136, 160) 3px 3px, rgb(0, 136, 160) 4px 4px, rgb(0, 136, 160) 5px 5px, rgb(0, 136, 160) 6px 6px, rgb(0, 136, 160) 7px 7px, rgb(0, 136, 160) 8px 8px, rgb(0, 136, 160) 9px 9px, rgb(0, 136, 160) 10px 10px, rgb(0, 136, 160) 11px 11px, rgb(0, 136, 160) 12px 12px, rgb(0, 136, 160) 13px 13px, rgb(0, 136, 160) 14px 14px, rgb(0, 136, 160) 15px 15px, rgb(0, 136, 160) 16px 16px, rgb(0, 136, 160) 17px 17px, rgb(0, 136, 160) 18px 18px, rgb(0, 136, 160) 19px 19px, rgb(0, 136, 160) 20px 20px, rgb(0, 136, 160) 21px 21px, rgb(0, 136, 160) 22px 22px, rgb(0, 136, 160) 23px 23px, rgb(0, 136, 160) 24px 24px, rgb(0, 136, 160) 25px 25px, rgb(0, 136, 161) 26px 26px, rgb(0, 137, 161) 27px 27px, rgb(0, 137, 162) 28px 28px, rgb(0, 138, 162) 29px 29px, rgb(0, 138, 163) 30px 30px, rgb(0, 138, 163) 31px 31px, rgb(0, 139, 164) 32px 32px, rgb(0, 139, 164) 33px 33px, rgb(0, 140, 165) 34px 34px, rgb(0, 140, 165) 35px 35px, rgb(0, 141, 166) 36px 36px, rgb(0, 141, 166) 37px 37px, rgb(0, 141, 167) 38px 38px, rgb(0, 142, 167) 39px 39px, rgb(0, 142, 168) 40px 40px, rgb(0, 143, 168) 41px 41px, rgb(0, 143, 169) 42px 42px, rgb(0, 143, 169) 43px 43px, rgb(0, 144, 170) 44px 44px, rgb(0, 144, 170) 45px 45px, rgb(0, 145, 171) 46px 46px, rgb(0, 145, 171) 47px 47px, rgb(0, 146, 172) 48px 48px, rgb(0, 146, 172) 49px 49px, rgb(0, 146, 173) 50px 50px, rgb(0, 147, 173) 51px 51px, rgb(0, 147, 174) 52px 52px, rgb(0, 148, 174) 53px 53px, rgb(0, 148, 175) 54px 54px, rgb(0, 148, 175) 55px 55px, rgb(0, 149, 176) 56px 56px, rgb(0, 149, 176) 57px 57px, rgb(0, 150, 177) 58px 58px, rgb(0, 150, 177) 59px 59px, rgb(0, 151, 178) 60px 60px;
+  }
+  #kyushu
+  {
+    background-color: #FFF;
+    position: absolute;
+    top: 240px;
+    left: 130px;
+    width: 50px;
+    height:110px;
+    box-shadow: rgb(0, 136, 160) 1px 1px, rgb(0, 136, 160) 2px 2px, rgb(0, 136, 160) 3px 3px, rgb(0, 136, 160) 4px 4px, rgb(0, 136, 160) 5px 5px, rgb(0, 136, 160) 6px 6px, rgb(0, 136, 160) 7px 7px, rgb(0, 136, 160) 8px 8px, rgb(0, 136, 160) 9px 9px, rgb(0, 136, 160) 10px 10px, rgb(0, 136, 160) 11px 11px, rgb(0, 136, 160) 12px 12px, rgb(0, 136, 160) 13px 13px, rgb(0, 136, 160) 14px 14px, rgb(0, 136, 160) 15px 15px, rgb(0, 136, 160) 16px 16px, rgb(0, 136, 160) 17px 17px, rgb(0, 136, 160) 18px 18px, rgb(0, 136, 160) 19px 19px, rgb(0, 136, 160) 20px 20px, rgb(0, 136, 160) 21px 21px, rgb(0, 136, 160) 22px 22px, rgb(0, 136, 160) 23px 23px, rgb(0, 136, 160) 24px 24px, rgb(0, 136, 160) 25px 25px, rgb(0, 136, 161) 26px 26px, rgb(0, 137, 161) 27px 27px, rgb(0, 137, 162) 28px 28px, rgb(0, 138, 162) 29px 29px, rgb(0, 138, 163) 30px 30px, rgb(0, 138, 163) 31px 31px, rgb(0, 139, 164) 32px 32px, rgb(0, 139, 164) 33px 33px, rgb(0, 140, 165) 34px 34px, rgb(0, 140, 165) 35px 35px, rgb(0, 141, 166) 36px 36px, rgb(0, 141, 166) 37px 37px, rgb(0, 141, 167) 38px 38px, rgb(0, 142, 167) 39px 39px, rgb(0, 142, 168) 40px 40px, rgb(0, 143, 168) 41px 41px, rgb(0, 143, 169) 42px 42px, rgb(0, 143, 169) 43px 43px, rgb(0, 144, 170) 44px 44px, rgb(0, 144, 170) 45px 45px, rgb(0, 145, 171) 46px 46px, rgb(0, 145, 171) 47px 47px, rgb(0, 146, 172) 48px 48px, rgb(0, 146, 172) 49px 49px, rgb(0, 146, 173) 50px 50px, rgb(0, 147, 173) 51px 51px, rgb(0, 147, 174) 52px 52px, rgb(0, 148, 174) 53px 53px, rgb(0, 148, 175) 54px 54px, rgb(0, 148, 175) 55px 55px, rgb(0, 149, 176) 56px 56px, rgb(0, 149, 176) 57px 57px, rgb(0, 150, 177) 58px 58px, rgb(0, 150, 177) 59px 59px, rgb(0, 151, 178) 60px 60px;
+    #sensor {
+      position: absolute;
+      background-color: rgb(0, 151, 178);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      width: 15px;
+      height: 15px;
+      top: 100px;
+      left: 10px;
+      #playbutton
+      {
+        position: absolute;
+        background-color: #FFF;
+        top: 1px;
+        left: 1px;
+        width: 13px;
+        height: 13px;
+      }
+    }
+    #line{
+      position: absolute;
+      transform: rotate(-40deg);
+      background-color: #FFF;
+      width: 70px;
+      height: 0.5px;
+      top: 138px;
+      left: -45px;
+      opacity: 0;
+    }
+    #info {
+      position: absolute;
+      -moz-transform: skewX(12deg);
+      -webkit-transform: skewX(12deg);
+      transform: skewX(12deg);
+      width: 250px;
+      height: 20px;
+      top: 150px;
+      left: -130px;
+      color: rgb(0, 151, 178);
+      opacity: 0;
+      font-size: 16px;
+      .info-name {
+        background-color: #FFF;
+        font-size: 20px;
+      }
+      .rainfall {
+        position: absolute;
+        top: 10px;
+        left: 60px;
+        background-color: #FFF;
+      }
+      .temperature {
+        position: absolute;
+        top: 30px;
+        left: 60px;
+        background-color: #FFF;
+      }
+      .windspeed {
+        position: absolute;
+        top: 50px;
+        left: 60px;
+        background-color: #FFF;
+      }
+    }
+  }
+  #east
+  {
+    background-color: #FFF;
+    position: absolute;
+    top: 240px;
+    left: 190px;
+    width: 151px;
+    height:60px;
+    box-shadow: rgb(0, 136, 160) 1px 1px, rgb(0, 136, 160) 2px 2px, rgb(0, 136, 160) 3px 3px, rgb(0, 136, 160) 4px 4px, rgb(0, 136, 160) 5px 5px, rgb(0, 136, 160) 6px 6px, rgb(0, 136, 160) 7px 7px, rgb(0, 136, 160) 8px 8px, rgb(0, 136, 160) 9px 9px, rgb(0, 136, 160) 10px 10px, rgb(0, 136, 160) 11px 11px, rgb(0, 136, 160) 12px 12px, rgb(0, 136, 160) 13px 13px, rgb(0, 136, 160) 14px 14px, rgb(0, 136, 160) 15px 15px, rgb(0, 136, 160) 16px 16px, rgb(0, 136, 160) 17px 17px, rgb(0, 136, 160) 18px 18px, rgb(0, 136, 160) 19px 19px, rgb(0, 136, 160) 20px 20px, rgb(0, 136, 160) 21px 21px, rgb(0, 136, 160) 22px 22px, rgb(0, 136, 160) 23px 23px, rgb(0, 136, 160) 24px 24px, rgb(0, 136, 160) 25px 25px, rgb(0, 136, 161) 26px 26px, rgb(0, 137, 161) 27px 27px, rgb(0, 137, 162) 28px 28px, rgb(0, 138, 162) 29px 29px, rgb(0, 138, 163) 30px 30px, rgb(0, 138, 163) 31px 31px, rgb(0, 139, 164) 32px 32px, rgb(0, 139, 164) 33px 33px, rgb(0, 140, 165) 34px 34px, rgb(0, 140, 165) 35px 35px, rgb(0, 141, 166) 36px 36px, rgb(0, 141, 166) 37px 37px, rgb(0, 141, 167) 38px 38px, rgb(0, 142, 167) 39px 39px, rgb(0, 142, 168) 40px 40px, rgb(0, 143, 168) 41px 41px, rgb(0, 143, 169) 42px 42px, rgb(0, 143, 169) 43px 43px, rgb(0, 144, 170) 44px 44px, rgb(0, 144, 170) 45px 45px, rgb(0, 145, 171) 46px 46px, rgb(0, 145, 171) 47px 47px, rgb(0, 146, 172) 48px 48px, rgb(0, 146, 172) 49px 49px, rgb(0, 146, 173) 50px 50px, rgb(0, 147, 173) 51px 51px, rgb(0, 147, 174) 52px 52px, rgb(0, 148, 174) 53px 53px, rgb(0, 148, 175) 54px 54px, rgb(0, 148, 175) 55px 55px, rgb(0, 149, 176) 56px 56px, rgb(0, 149, 176) 57px 57px, rgb(0, 150, 177) 58px 58px, rgb(0, 150, 177) 59px 59px, rgb(0, 151, 178) 60px 60px;
+    #sensor {
+      position: absolute;
+      background-color: rgb(0, 151, 178);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      width: 15px;
+      height: 15px;
+      top: 40px;
+      left: 20px;
+      #playbutton
+      {
+        position: absolute;
+        background-color: #FFF;
+        top: 1px;
+        left: 1px;
+        width: 13px;
+        height: 13px;
+      }
+    }
+    #line{
+      position: absolute;
+      -webkit-transform: rotate(40deg);
+      -moz-transform: rotate(40deg);
+      background-color: #FFF;
+      width: 200px;
+      height: 0.5px;
+      top: 110px;
+      left: 10px;
+      opacity: 0;
+    }
+    #info
+    {
+      position: absolute;
+      -moz-transform:skewX(12deg);
+      -webkit-transform:skewX(12deg);
+      transform:skewX(12deg);
+      width: 250px;
+      height: 20px;
+      top: 175px;
+      left: 50px;
+      color: rgb(0, 151, 178);
+      opacity: 0;
+      font-size: 16px;
+      .info-name
+      {
+        background-color: #FFF;
+        font-size: 20px;
+      }
+      .rainfall
+      {
+        position: absolute;
+        top:10px;
+        left: 30px;
+        background-color: #FFF;
+      }
+      .temperature
+      {
+        position: absolute;
+        top:30px;
+        left: 30px;
+        background-color: #FFF;
+      }
+      .windspeed
+      {
+        position: absolute;
+        top:50px;
+        left: 30px;
+        background-color: #FFF;
+      }
+    }
+  }
+  #west
+  {
+    background-color: #FFF;
+    position: absolute;
+    top: 150px;
+    left: 340px;
+    width: 70px;
+    height:160px;
+    box-shadow: rgb(0, 136, 160) 1px 1px, rgb(0, 136, 160) 2px 2px, rgb(0, 136, 160) 3px 3px, rgb(0, 136, 160) 4px 4px, rgb(0, 136, 160) 5px 5px, rgb(0, 136, 160) 6px 6px, rgb(0, 136, 160) 7px 7px, rgb(0, 136, 160) 8px 8px, rgb(0, 136, 160) 9px 9px, rgb(0, 136, 160) 10px 10px, rgb(0, 136, 160) 11px 11px, rgb(0, 136, 160) 12px 12px, rgb(0, 136, 160) 13px 13px, rgb(0, 136, 160) 14px 14px, rgb(0, 136, 160) 15px 15px, rgb(0, 136, 160) 16px 16px, rgb(0, 136, 160) 17px 17px, rgb(0, 136, 160) 18px 18px, rgb(0, 136, 160) 19px 19px, rgb(0, 136, 160) 20px 20px, rgb(0, 136, 160) 21px 21px, rgb(0, 136, 160) 22px 22px, rgb(0, 136, 160) 23px 23px, rgb(0, 136, 160) 24px 24px, rgb(0, 136, 160) 25px 25px, rgb(0, 136, 161) 26px 26px, rgb(0, 137, 161) 27px 27px, rgb(0, 137, 162) 28px 28px, rgb(0, 138, 162) 29px 29px, rgb(0, 138, 163) 30px 30px, rgb(0, 138, 163) 31px 31px, rgb(0, 139, 164) 32px 32px, rgb(0, 139, 164) 33px 33px, rgb(0, 140, 165) 34px 34px, rgb(0, 140, 165) 35px 35px, rgb(0, 141, 166) 36px 36px, rgb(0, 141, 166) 37px 37px, rgb(0, 141, 167) 38px 38px, rgb(0, 142, 167) 39px 39px, rgb(0, 142, 168) 40px 40px, rgb(0, 143, 168) 41px 41px, rgb(0, 143, 169) 42px 42px, rgb(0, 143, 169) 43px 43px, rgb(0, 144, 170) 44px 44px, rgb(0, 144, 170) 45px 45px, rgb(0, 145, 171) 46px 46px, rgb(0, 145, 171) 47px 47px, rgb(0, 146, 172) 48px 48px, rgb(0, 146, 172) 49px 49px, rgb(0, 146, 173) 50px 50px, rgb(0, 147, 173) 51px 51px, rgb(0, 147, 174) 52px 52px, rgb(0, 148, 174) 53px 53px, rgb(0, 148, 175) 54px 54px, rgb(0, 148, 175) 55px 55px, rgb(0, 149, 176) 56px 56px, rgb(0, 149, 176) 57px 57px, rgb(0, 150, 177) 58px 58px, rgb(0, 150, 177) 59px 59px, rgb(0, 151, 178) 60px 60px;
+    #sensor
+    {
+      position: absolute;
+      background-color: rgb(0, 151, 178);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      width: 15px;
+      height: 15px;
+      top: 130px;
+      left: 50px;
+      #playbutton
+      {
+        position: absolute;
+        background-color: #FFF;
+        top: 1px;
+        left: 1px;
+        width: 13px;
+        height: 13px;
+      }
+    }
+    #line
+    {
+      position: absolute;
+      -webkit-transform: rotate(-5deg);
+      -moz-transform: rotate(-5deg);
+      background-color: #FFF;
+      width: 100px;
+      height: 0.5px;
+      top: 130px;
+      left: 67px;
+      opacity: 0;
+    }
+    #info
+    {
+      position: absolute;
+      -moz-transform:skewX(12deg);
+      -webkit-transform:skewX(12deg);
+      transform:skewX(12deg);
+      width: 250px;
+      height: 20px;
+      top: 115px;
+      left: 160px;
+      color: rgb(0, 151, 178);
+      font-size: 16px;
+      opacity: 0;
+      .info-name
+      {
+        background-color: #FFF;
+        font-size: 20px;
+      }
+      .rainfall
+      {
+        position: absolute;
+        top:10px;
+        left: 30px;
+        background-color: #FFF;
+      }
+      .temperature
+      {
+        position: absolute;
+        top:30px;
+        left: 30px;
+        background-color: #FFF;
+      }
+
+      .windspeed
+      {
+        position: absolute;
+        top:50px;
+        left: 30px;
+        background-color: #FFF;
+      }
+    }
+  }
+  #shikoku
+  {
+    background-color: #FFF;
+    position: absolute;
+    top: 310px;
+    left: 190px;
+    width: 60px;
+    height:40px;
+    box-shadow: rgb(0, 136, 160) 1px 1px, rgb(0, 136, 160) 2px 2px, rgb(0, 136, 160) 3px 3px, rgb(0, 136, 160) 4px 4px, rgb(0, 136, 160) 5px 5px, rgb(0, 136, 160) 6px 6px, rgb(0, 136, 160) 7px 7px, rgb(0, 136, 160) 8px 8px, rgb(0, 136, 160) 9px 9px, rgb(0, 136, 160) 10px 10px, rgb(0, 136, 160) 11px 11px, rgb(0, 136, 160) 12px 12px, rgb(0, 136, 160) 13px 13px, rgb(0, 136, 160) 14px 14px, rgb(0, 136, 160) 15px 15px, rgb(0, 136, 160) 16px 16px, rgb(0, 136, 160) 17px 17px, rgb(0, 136, 160) 18px 18px, rgb(0, 136, 160) 19px 19px, rgb(0, 136, 160) 20px 20px, rgb(0, 136, 160) 21px 21px, rgb(0, 136, 160) 22px 22px, rgb(0, 136, 160) 23px 23px, rgb(0, 136, 160) 24px 24px, rgb(0, 136, 160) 25px 25px, rgb(0, 136, 161) 26px 26px, rgb(0, 137, 161) 27px 27px, rgb(0, 137, 162) 28px 28px, rgb(0, 138, 162) 29px 29px, rgb(0, 138, 163) 30px 30px, rgb(0, 138, 163) 31px 31px, rgb(0, 139, 164) 32px 32px, rgb(0, 139, 164) 33px 33px, rgb(0, 140, 165) 34px 34px, rgb(0, 140, 165) 35px 35px, rgb(0, 141, 166) 36px 36px, rgb(0, 141, 166) 37px 37px, rgb(0, 141, 167) 38px 38px, rgb(0, 142, 167) 39px 39px, rgb(0, 142, 168) 40px 40px, rgb(0, 143, 168) 41px 41px, rgb(0, 143, 169) 42px 42px, rgb(0, 143, 169) 43px 43px, rgb(0, 144, 170) 44px 44px, rgb(0, 144, 170) 45px 45px, rgb(0, 145, 171) 46px 46px, rgb(0, 145, 171) 47px 47px, rgb(0, 146, 172) 48px 48px, rgb(0, 146, 172) 49px 49px, rgb(0, 146, 173) 50px 50px, rgb(0, 147, 173) 51px 51px, rgb(0, 147, 174) 52px 52px, rgb(0, 148, 174) 53px 53px, rgb(0, 148, 175) 54px 54px, rgb(0, 148, 175) 55px 55px, rgb(0, 149, 176) 56px 56px, rgb(0, 149, 176) 57px 57px, rgb(0, 150, 177) 58px 58px, rgb(0, 150, 177) 59px 59px, rgb(0, 151, 178) 60px 60px;
+  }
+}
+
+.parallelogram
+{
+  -moz-transform:skewX(-12deg);
+  -webkit-transform:skewX(-12deg);
+  transform:skewX(-12deg);
+}
+
