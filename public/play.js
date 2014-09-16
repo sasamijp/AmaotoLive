@@ -41,3 +41,11 @@ function stop (sound_id) {
   createjs.Sound.stop(sound_id);
   isPlaying = false;
 }
+
+
+$(document).ready(function(){
+    $("#messages").find("#message-1").shuffleLetters();
+    $("#messages").find("#message-2").shuffleLetters();
+    $("#messages").find("#message-3").shuffleLetters();
+});
+

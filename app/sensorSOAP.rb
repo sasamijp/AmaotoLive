@@ -41,7 +41,6 @@ class Sensor
     doc.elements.each('sensorGroup/') do |element|
       element.elements.each do |el|
         begin
-
           hash =  {
               :place => element.attributes['address'],
               :type => el.attributes['sensorType'],
@@ -50,7 +49,6 @@ class Sensor
           }
           all << hash
         rescue; next; end
-
       end
     end
     all

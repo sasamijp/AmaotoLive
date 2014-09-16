@@ -1,7 +1,6 @@
 # encoding: utf-8
 require 'sequel'
 
-
 class DbManager
 
   def insert(dbname, data, sound_file_paths)

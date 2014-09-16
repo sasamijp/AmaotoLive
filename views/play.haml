@@ -12,10 +12,14 @@
     %script{:type => 'text/javascript', :src => 'play.js'}
   %body
     %div{class: 'title'} #{@location.sub('.html', '').gsub('-','_').upcase}
-    - @soundarg = '' if @soundarg.nil?
     %a{onclick: "toggle(#{ "'" + @soundarg +"'" })"}
       %div{id: 'playbutton'}
         %div{class: 'playing'}
           %div{class: 'separator'}
         %div{class: 'triangle'}
-
+    %div{id: 'messages'}
+      %div{id: 'message-1'} rainfall : #{@location_data[:data][:RainFall]}
+      %div{id: 'message-2'} temperature : #{@location_data[:data][:Temperature]}
+      %div{id: 'message-3'} windspeed : #{@location_data[:data][:WindSpeed]}
+      %p{id: 'kanji'} #{@message}
+      %div{id: 'kanji-top'} sound :
