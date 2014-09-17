@@ -35,9 +35,7 @@ class Sensor
   def get_latest_data
     all = []
     body = get('get_latest_data',{id: @id, tz: 'JST', locale: 'Japanese'}).body
-    #p body
     doc = REXML::Document.new(body[:get_latest_data_response][:get_latest_data_return])
-    #puts doc
     doc.elements.each('sensorGroup/') do |element|
       element.elements.each do |el|
         begin
@@ -61,9 +59,7 @@ class Sensor
             tz: 'JST',
             locale: 'Japanese'
         }
-    )
-    body = body.body
-    #p body
+    ).body
     doc = REXML::Document.new(body[:get_profile_all_response][:get_profile_all_return])
     doc.elements.each('sensorGroup/sensorGroup') do |element|
       element.elements.each do |el|

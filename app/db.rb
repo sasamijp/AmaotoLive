@@ -13,23 +13,20 @@ class DbManager
   end
 
   def read(dbname)
-    result = []
-    db = Sequel.connect("sqlite://#{dbname}")
-    sqlite_master(db).uniq.each do |table|
+    result = {}
+    begin
+      db = Sequel.connect("sqlite://#{dbname}")
+    rescue
+      return nil
+    end
+    sqlite_master(db).each do |table|
       begin
-        if table.to_sym == :RainSound or table.to_sym == :WindSound
-          data = {
-              name: table,
-              value: db[table.to_sym].all[-1][:filepath]
-          }
-        else
-          data = {
-            name: table,
-            value: db[table.to_sym].all[-1][:value]
-          }
-        end
-        result << data
-      rescue; next; end
+        (table.to_sym == :RainSound or table.to_sym == :WindSound) ?
+            result[table.to_sym] = db[table.to_sym].all[-1][:filepath] :
+            result[table.to_sym] = db[table.to_sym].all[-1][:value]
+      rescue
+        next
+      end
     end
     result
   end

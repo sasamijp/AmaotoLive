@@ -2,7 +2,7 @@
 require 'sinatra/base'
 require './app/Sound.rb'
 require './app/db.rb'
-require './app/SensorSOAP.rb'
+require './app/sensorSOAP.rb'
 require './app/const.rb'
 
 class AmaotoLive < Sinatra::Base
@@ -13,6 +13,7 @@ class AmaotoLive < Sinatra::Base
   end
 
   helpers do
+
     def sound_arg(wind, rain)
       w = !wind.nil?
       r = !rain.nil?
@@ -33,7 +34,7 @@ class AmaotoLive < Sinatra::Base
       elsif sound_arg.include?('wind')
         "風#{sound_arg[-1]},雨0"
       elsif sound_arg.include?('rain')
-        "風邪0,雨#{sound_arg[-1]}"
+        "風0,雨#{sound_arg[-1]}"
       else
         '無'
       end
@@ -61,25 +62,11 @@ class AmaotoLive < Sinatra::Base
       Const::PLACES.find{|v|v[:path][5..-4] == location}[:id]
     end
 
-  end
-=begin
-  get '/' do
-    data = []
-    Const::PLACES.each do |place|
-      hash = {
-          name: place[:path][5..-4],
-          data: @db.read(place[:path])
-      }
-      data.push hash
+    def sensor?(location)
+      !Const::PLACES.find{|v|v[:path][5..-4] == location}.nil?
     end
-    #puts @data
-    #@hiroshima = @data.find{|v|v[:name]=='hiroshima_city_university'}
-    @nakano = data.find{|v|v[:name]=='nakano_jima'}
-    @kashiwanoha = data.find{|v|v[:name]=='kashiwanoha_high_school'}
-    @aori = data.find{|v|v[:name]=='otsuchi_u_tokyo'}
-    haml :index
+
   end
-=end
 
   get '/' do
     place_data = []
@@ -99,46 +86,18 @@ class AmaotoLive < Sinatra::Base
     haml :index
   end
 
-  get '/main.css' do
-    scss :'/main'
-  end
-
-  get '/play.css' do
-    scss :'/play'
-  end
-
-  #get '/dummy_rain' do
-  #  @location = 'dummy-rain'
-  #  @soundarg = "wind2','rain3"
-  #  haml :play
-  #end
-
   get '/:location' do |location|
-=begin
-
-    @data = []
-    Const::PLACES.each do |place|
-      hash = {
-          name: place[:path][5..-4],
-          data: @db.read(place[:path])
-      }
-      @data.push hash
-    end
-
-    #p @data.find{|v|v[:name]==@location.gsub('-', '_')}
-    #@data.each do |v|
-    #  p v[:name]
-    #  p @location.gsub('-', '_')
-    #end
-=end
-
     @location = location
-    s = Sensor.new(location_to_id(@location.gsub('-', '_')))
-    latest = s.get_latest_data
-    @so.load(latest)
-    @location_data = {data: to_place_data_sound(latest, @so.sounds)}
-
-    #@location_data = @data.find{|v|v[:name]==@location.gsub('-', '_')}
+    break unless sensor? location
+    if location.include?('dummy')
+      db_read_return = @db.read(Const::PLACES.find{|v|v[:path][5..-4]==location.gsub('-', '_')})
+      @location_data = {data: db_read_return[:path]} unless db_read_return.nil?
+    else
+      s = Sensor.new(location_to_id(location.gsub('-', '_')))
+      latest = s.get_latest_data
+      @so.load(latest)
+      @location_data = {data: to_place_data_sound(latest, @so.sounds)}
+    end
     unless @location_data.nil?
       wind = @location_data[:data][:WindSound]
       rain = @location_data[:data][:RainSound]
@@ -148,5 +107,13 @@ class AmaotoLive < Sinatra::Base
       haml :play
     end
   end
-  0
+
+  get '/main.css' do
+    scss :'/main'
+  end
+
+  get '/play.css' do
+    scss :'/play'
+  end
+
 end
