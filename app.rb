@@ -24,11 +24,11 @@ class AmaotoLive < Sinatra::Base
       elsif !w and r
         'rain'+rain[-5]
       else
-        nil
+        ''
       end
     end
 
-    def message(sound_arg)
+    def to_message(sound_arg)
       if sound_arg.include?('wind') and sound_arg.include?('rain')
         "風#{sound_arg[4]},雨#{sound_arg[-1]}"
       elsif sound_arg.include?('wind')
@@ -58,12 +58,16 @@ class AmaotoLive < Sinatra::Base
       ret
     end
 
-    def location_to_id(location)
+    def get_id_by_location(location)
       Const::PLACES.find{|v|v[:path][5..-4] == location}[:id]
     end
 
     def sensor?(location)
       !Const::PLACES.find{|v|v[:path][5..-4] == location}.nil?
+    end
+
+    def dummy?(location)
+      location.include?('dummy')
     end
 
   end
@@ -87,13 +91,13 @@ class AmaotoLive < Sinatra::Base
   end
 
   get '/:location' do |location|
-    @location = location
     break unless sensor? location
-    if location.include?('dummy')
+    @location = location
+    if dummy? location
       db_read_return = @db.read(Const::PLACES.find{|v|v[:path][5..-4]==location.gsub('-', '_')})
       @location_data = {data: db_read_return[:path]} unless db_read_return.nil?
     else
-      s = Sensor.new(location_to_id(location.gsub('-', '_')))
+      s = Sensor.new(get_id_by_location(location.gsub('-', '_')))
       latest = s.get_latest_data
       @so.load(latest)
       @location_data = {data: to_place_data_sound(latest, @so.sounds)}
@@ -102,8 +106,7 @@ class AmaotoLive < Sinatra::Base
       wind = @location_data[:data][:WindSound]
       rain = @location_data[:data][:RainSound]
       @soundarg = sound_arg(wind, rain)
-      @soundarg = '' if @soundarg.nil?
-      @message = message(@soundarg)
+      @message = to_message(@soundarg)
       haml :play
     end
   end
