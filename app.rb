@@ -63,7 +63,7 @@ class AmaotoLive < Sinatra::Base
     end
 
     def sensor?(location)
-      !Const::PLACES.find{|v|v[:path][5..-4] == location}.nil?
+      !Const::PLACES.find{|v|v[:path][5..-4] == location.gsub('-', '_')}.nil?
     end
 
     def dummy?(location)
@@ -71,6 +71,15 @@ class AmaotoLive < Sinatra::Base
     end
 
   end
+
+  get '/main.css' do
+    scss :'/main'
+  end
+
+  get '/play.css' do
+    scss :'/play'
+  end
+
 
   get '/' do
     place_data = []
@@ -94,11 +103,12 @@ class AmaotoLive < Sinatra::Base
     break unless sensor? location
     @location = location
     if dummy? location
-      db_read_return = @db.read(Const::PLACES.find{|v|v[:path][5..-4]==location.gsub('-', '_')})
-      @location_data = {data: db_read_return[:path]} unless db_read_return.nil?
+      db_path = Const::PLACES.find{|v|v[:path][5..-4]==location}
+      @location_data = {data: @db.read(db_path[:path])} unless db_path.nil?
     else
       s = Sensor.new(get_id_by_location(location.gsub('-', '_')))
       latest = s.get_latest_data
+      p latest
       @so.load(latest)
       @location_data = {data: to_place_data_sound(latest, @so.sounds)}
     end
@@ -111,12 +121,5 @@ class AmaotoLive < Sinatra::Base
     end
   end
 
-  get '/main.css' do
-    scss :'/main'
-  end
-
-  get '/play.css' do
-    scss :'/play'
-  end
 
 end
